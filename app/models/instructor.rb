@@ -13,20 +13,20 @@ class Instructor
   end
 
   def pass_student(student, test_name)
-    BoatingTest.all.each do |test|
-      if test.student == student && test.test_name == test_name
-        test.status = "passed"
+    BoatingTest.all.each do |test|  #needs to iterate thru BoatingTest
+      if test.student == student && test.test_name == test_name #if given argument matches
+        test.status = "passed" #change status to passed
         #binding.pry
       else
-        BoatingTest.new(student, test_name, "passed", self)
+        BoatingTest.new(student, test_name, "passed", self) #if not, create new test
       end
     end
   end
 
   def fail_student(student, test_name)
-    BoatingTest.all.each do |test|
-      if test.student == student && test.test_name == test_name
-        test.status = "failed"
+    BoatingTest.all.each do |test|   #iterate thru Boatingtest, where all the tests are stored
+      if test.student == student && test.test_name == test_name  #argurement matching
+        test.status = "failed"  #change status to passed, accessed status with test.status
       else
         BoatingTest.new(student, test_name, "failed", self)
       end

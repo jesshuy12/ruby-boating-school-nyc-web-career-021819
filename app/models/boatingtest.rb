@@ -1,6 +1,6 @@
 class BoatingTest
 
-  attr_accessor :student, :test_name, :status, :instructor, :first_name, :name
+  attr_accessor :student, :test_name, :status, :instructor
 
   @@all = []
 
